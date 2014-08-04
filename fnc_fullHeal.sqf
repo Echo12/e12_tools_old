@@ -31,9 +31,4 @@ _unit setDamage 0;
 
 
 //Reset whole stamina system
-_unit setVariable [QGVAR(Concussion), 0, true];
-_unit setVariable [QGVAR(Breathing), 0, true];
-_unit setVariable [QGVAR(Fatigue), 0, true];
-_unit setVariable [QGVAR(heartBeat), [0, 1], true];
-_unit setVariable [QGVAR(Wounds), 0, true];
-_unit setVariable [QGVAR(Panic), false, true];
+_unit setFatigue 0;
