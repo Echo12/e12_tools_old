@@ -1,6 +1,9 @@
 #include "script_component.hpp"
-waitUntil {!isNil "CBA_ui_fnc_add"};
+#define DIK_F5              0x3F
+#define DIK_F6              0x40
 
+
+waitUntil {!isNil "CBA_fnc_registerKeybindToFleximenu"};
 
 //Settings
 if(isNil "e12_settings_maxvd") then {e12_settings_maxvd = 10000;};
@@ -47,17 +50,5 @@ GVAR(interact_original_group) = group player;
 }] call CBA_fnc_addEventHandler;
 
 
-//[QGVAR(event_makemedic),{
-//    if(local (_this select 0)) then {
-//    	_this spawn {
-//        	if(player == (_this select 0)) then {
-//	       		player setVariable ["ace_w_ismedic",true]; 
-//	    	};
-//	    };
-//    };
-//}] call CBA_fnc_addEventHandler;
-
-
-
-["player", [ace_sys_interaction_key_self], -100, [QPATHTO_F(fnc_menuDef_Self), "main"]] call CBA_ui_fnc_add;
-["player", [ace_sys_interaction_key], -100, [QPATHTO_F(fnc_menuDef_Other), "main"]] call CBA_ui_fnc_add;
+["e12Tools", "Self-Interaction", ["player", [], -100, [QPATHTO_F(fnc_menuDef_Self), "main"]], [DIK_F5,false,false,false]] call CBA_fnc_registerKeybindToFleximenu;
+["e12Tools", "Interaction", ["player", [], -100, [QPATHTO_F(fnc_menuDef_Other), "main"]], [DIK_F6,false,false,false]] call CBA_fnc_registerKeybindToFleximenu;
