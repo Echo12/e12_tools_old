@@ -32,4 +32,4 @@ if (count _menuDef == 0) then {
   diag_log format ["Error: Menu not found: %1, %2, %3", str _menuName, _this, __FILE__];
 };
 
-_menuDef 
+_menuDef
