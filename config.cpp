@@ -2,11 +2,11 @@
 class CfgPatches {
 
 	class e12_tools {
-		units = {};
-		weapons = {};
+		units[] = {};
+		weapons[] = {};
 		requiredVersion = 1.000000;
-		requiredAddons = {"CBA_MAIN"};
-		author = {"Coati - Echo12 Development Team"};
+		requiredAddons[] = {"CBA_MAIN"};
+		author[] = {"Coati - Echo12 Development Team"};
 		version = "1.0.0";
 		authorUrl = "http://www.echo12.de";
 	};
@@ -35,16 +35,16 @@ class E12UI_Frame {
 	type = 0;
 	style = "0x00";
 	sizeEx = 0.032000;
-	font = "Zeppelin32";
-	colorBackground = {"39/256", "46/256", "38/256", "3/4"};
-	colorText = {0, 0, 0, 0};
+	font = "PuristaLight";
+	colorBackground[] = {"39/256", "46/256", "38/256", "3/4"};
+	colorText[] = {0, 0, 0, 0};
 	text = "";
 };
 
 class E12UI_Caption: E12UI_Frame {
 	h = "(((safeZoneH * 0.9)/ 42) / 0.8)";
-	colorBackground = {"93/256", "117/256", "93/256", "4/5"};
-	colorText = {"204/256", "255/256", "151/256", 1};
+	colorBackground[] = {"93/256", "117/256", "93/256", "4/5"};
+	colorText[] = {"204/256", "255/256", "151/256", 1};
 };
 
 class E12UI_List {
@@ -56,33 +56,32 @@ class E12UI_List {
 	type = 5;
 	style = "0 + 0x10";
 	sizeEx = 0.032000;
-	font = "Zeppelin32";
+	font = "PuristaLight";
 	rowHeight = "(((safeZoneH * 0.9)/ 42) / 0.8)";
 	wholeHeight = "5 * (((safeZoneH * 0.9)/ 42) / 0.8)";
-	color = {0, 0.500000, 0, 1};
-	colorText = {"204/256", "255/256", "151/256", 1};
-	colorBackground = {"39/256", "46/256", "38/256", "3/4"};
-	colorScrollbar = {0.950000, 0.950000, 0.950000, 1};
-	colorSelect = {"59/256", "79/256", "51/256", "1/2"};
-	colorSelect2 = {0.950000, 0.950000, 0.950000, 1};
-	colorSelectBackground = {0, 1, 0, 1};
-	colorSelectBackground2 = {0.600000, 0.839200, 0.470600, 1.000000};
+	color[] = {0, 0.500000, 0, 1};
+	colorText[] = {"204/256", "255/256", "151/256", 1};
+	colorBackground[] = {"39/256", "46/256", "38/256", "3/4"};
+	colorScrollbar[] = {0.950000, 0.950000, 0.950000, 1};
+	colorSelect[] = {"59/256", "79/256", "51/256", "1/2"};
+	colorSelect2[] = {0.950000, 0.950000, 0.950000, 1};
+	colorSelectBackground[] = {0, 1, 0, 1};
+	colorSelectBackground2[] = {0.600000, 0.839200, 0.470600, 1.000000};
 	period = 0;
-	soundSelect = {"", 0.000000, 1};
+	soundSelect[] = {"", 0.000000, 1};
 	autoScrollSpeed = -1;
 	autoScrollDelay = 5;
 	autoScrollRewind = 0;
 	maxHistoryDelay = 1.000000;
 	arrowFull = "\ca\ui\data\ui_arrow_top_active_ca.paa";
 	arrowEmpty = "\ca\ui\data\ui_arrow_top_ca.paa";
-
 	class ScrollBar {
-		color = {"204/256", "255/256", "151/256", "3/4"};
-		colorActive = {"204/256", "255/256", "151/256", 1};
-		colorDisabled = {"204/256", "255/256", "151/256", "1/2"};
+		//color = {"204/256", "255/256", "151/256", "3/4"};
+		colorActive[] = {"204/256", "255/256", "151/256", 1};
+		colorDisabled[] = {"204/256", "255/256", "151/256", "1/2"};
 		thumb = "\ca\ui\data\ui_scrollbar_thumb_ca.paa";
-		arrowFull = "\ca\ui\data\ui_arrow_top_active_ca.paa";
-		arrowEmpty = "\ca\ui\data\ui_arrow_top_ca.paa";
+		//arrowFull = "\ca\ui\data\ui_arrow_top_active_ca.paa";
+		//arrowEmpty = "\ca\ui\data\ui_arrow_top_ca.paa";
 		border = "\ca\ui\data\ui_border_scroll_ca.paa";
 	};
 };
@@ -96,24 +95,24 @@ class E12UI_Button {
 	type = 1;
 	style = "0x02";
 	sizeEx = 0.032000;
-	font = "Zeppelin32";
-	colorText = {"204/256", "255/256", "151/256", 1};
-	colorFocused = {"39/256", "46/256", "38/256", "3/5"};
-	colorDisabled = {"39/256", "46/256", "38/256", "2/5"};
-	colorBackground = {"39/256", "46/256", "38/256", "4/5"};
-	colorBackgroundDisabled = {"39/256", "46/256", "38/256", "4/5"};
-	colorBackgroundActive = {"39/256", "46/256", "38/256", "5/5"};
+	font = "PuristaLight";
+	colorText[] = {"204/256", "255/256", "151/256", 1};
+	colorFocused[] = {"39/256", "46/256", "38/256", "3/5"};
+	colorDisabled[] = {"39/256", "46/256", "38/256", "2/5"};
+	colorBackground[] = {"39/256", "46/256", "38/256", "4/5"};
+	colorBackgroundDisabled[] = {"39/256", "46/256", "38/256", "4/5"};
+	colorBackgroundActive[] = {"39/256", "46/256", "38/256", "5/5"};
 	offsetX = 0.003000;
 	offsetY = 0.003000;
 	offsetPressedX = 0.002000;
 	offsetPressedY = 0.002000;
-	colorShadow = {0, 0, 0, 0};
-	colorBorder = {0, 0, 0, 0};
+	colorShadow[] = {0, 0, 0, 0};
+	colorBorder[] = {0, 0, 0, 0};
 	borderSize = 0;
-	soundEnter = {"", 0, 1};
-	soundPush = {"", 0.100000, 1};
-	soundClick = {"", 0, 1};
-	soundEscape = {"", 0, 1};
+	soundEnter[] = {"", 0, 1};
+	soundPush[] = {"", 0.100000, 1};
+	soundClick[] = {"", 0, 1};
+	soundEscape[] = {"", 0, 1};
 };
 
 class E12UI_Combo {
@@ -125,17 +124,17 @@ class E12UI_Combo {
 	type = 4;
 	style = "0x00";
 	sizeEx = 0.032000;
-	font = "Zeppelin32";
+	font = "PuristaLight";
 	rowHeight = "(((safeZoneH * 0.9)/ 42) / 0.8)";
 	wholeHeight = "5 * (((safeZoneH * 0.9)/ 42) / 0.8)";
-	color = {1, 1, 1, "3/4"};
-	colorText = {"204/256", "255/256", "151/256", "3/5"};
-	colorBackground = {"39/256", "46/256", "38/256", "2/4"};
-	colorSelect = {"204/256", "255/256", "151/256", 1};
-	colorSelectBackground = {"39/256", "46/256", "38/256", "3/4"};
-	soundSelect = {"", 0.000000, 1};
-	soundExpand = {"", 0.000000, 1};
-	soundCollapse = {"", 0.000000, 1};
+	color[] = {1, 1, 1, "3/4"};
+	colorText[] = {"204/256", "255/256", "151/256", "3/5"};
+	colorBackground[] = {"39/256", "46/256", "38/256", "2/4"};
+	colorSelect[] = {"204/256", "255/256", "151/256", 1};
+	colorSelectBackground[] = {"39/256", "46/256", "38/256", "3/4"};
+	soundSelect[] = {"", 0.000000, 1};
+	soundExpand[] = {"", 0.000000, 1};
+	soundCollapse[] = {"", 0.000000, 1};
 	autoScrollSpeed = -1;
 	autoScrollDelay = 5;
 	autoScrollRewind = 0;
@@ -144,9 +143,9 @@ class E12UI_Combo {
 	arrowEmpty = "\ca\ui\data\ui_arrow_top_ca.paa";
 
 	class ScrollBar {
-		color = {"204/256", "255/256", "151/256", "3/4"};
-		colorActive = {"204/256", "255/256", "151/256", 1};
-		colorDisabled = {"204/256", "255/256", "151/256", "1/2"};
+		color[] = {"204/256", "255/256", "151/256", "3/4"};
+		colorActive[] = {"204/256", "255/256", "151/256", 1};
+		colorDisabled[] = {"204/256", "255/256", "151/256", "1/2"};
 		thumb = "\ca\ui\data\ui_scrollbar_thumb_ca.paa";
 		arrowFull = "\ca\ui\data\ui_arrow_top_active_ca.paa";
 		arrowEmpty = "\ca\ui\data\ui_arrow_top_ca.paa";
@@ -165,9 +164,9 @@ class E12UI_Edit {
 	style = 16;
 	sizeEx = 0.028000;
 	font = "BitStream";
-	colorBackground = {"39/256", "46/256", "38/256", "4/5"};
-	colorText = {"204/256", "255/256", "151/256", "4/5"};
-	colorSelection = {0, 0, 0, 1};
+	colorBackground[] = {"39/256", "46/256", "38/256", "4/5"};
+	colorText[] = {"204/256", "255/256", "151/256", "4/5"};
+	colorSelection[] = {0, 0, 0, 1};
 	autocomplete = "false";
 	text = "";
 };
@@ -180,8 +179,8 @@ class E12UI_Slider {
 	h = "(((safeZoneH * 0.9)/ 42) / 0.8)";
 	type = 3;
 	style = "0x400";
-	color = {"204/256", "255/256", "151/256", "4/5"};
-	coloractive = {"204/256", "255/256", "151/256", 1};
+	color[] = {"204/256", "255/256", "151/256", "4/5"};
+	coloractive[] = {"204/256", "255/256", "151/256", 1};
 	onSliderPosChanged = "";
 };
 
@@ -194,9 +193,9 @@ class E12UI_Text {
 	type = 0;
 	style = "0x00";
 	sizeEx = 0.032000;
-	font = "Zeppelin32";
-	colorBackground = {0, 0, 0, 0};
-	colorText = {"204/256", "255/256", "151/256", 1};
+	font = "PuristaLight";
+	colorBackground[] = {0, 0, 0, 0};
+	colorText[] = {"204/256", "255/256", "151/256", 1};
 };
 
 class E12UI_StructText {
@@ -208,9 +207,9 @@ class E12UI_StructText {
 	type = 13;
 	style = "0x00";
 	size = 0.032000;
-	font = "Zeppelin32";
-	colorBackground = {0, 0, 0, 0};
-	colorText = {"204/256", "255/256", "151/256", 1};
+	font = "PuristaLight";
+	colorBackground[] = {0, 0, 0, 0};
+	colorText[] = {"204/256", "255/256", "151/256", 1};
 };
 
 class E12UI_ControlGroup {
@@ -223,7 +222,7 @@ class E12UI_ControlGroup {
 	style = "0x00";
 
 	class VScrollbar {
-		color = {1, 1, 1, 1};
+		color[] = {1, 1, 1, 1};
 		width = 0.021000;
 		autoScrollSpeed = -1;
 		autoScrollDelay = 5;
@@ -231,14 +230,14 @@ class E12UI_ControlGroup {
 	};
 
 	class HScrollbar {
-		color = {1, 1, 1, 1};
+		color[] = {1, 1, 1, 1};
 		height = 0.028000;
 	};
 
 	class ScrollBar {
-		color = {1, 1, 1, 0.600000};
-		colorActive = {1, 1, 1, 1};
-		colorDisabled = {1, 1, 1, 0.300000};
+		color[] = {1, 1, 1, 0.600000};
+		colorActive[] = {1, 1, 1, 1};
+		colorDisabled[] = {1, 1, 1, 0.300000};
 		thumb = "#(argb,8,8,3)color(1,1,1,1)";
 		arrowEmpty = "#(argb,8,8,3)color(1,1,1,1)";
 		arrowFull = "#(argb,8,8,3)color(1,1,1,1)";
@@ -253,7 +252,7 @@ class e12_RMM_ui_settings {
 	idd = 80508;
 	movingEnable = 1;
 	enableSimulation = 1;
-	onLoad = "[] spawn {if (isnil "terraindetail") then {terraindetail = 2}; ctrlSetText [1,format['%1/%2 m', viewdistance, e12_settings_maxvd]]; ctrlSetText [3,format['%1/%2', terraindetail, 5]]; sliderSetRange [2, 500, e12_settings_maxvd];sliderSetRange [4, 1, 5];sliderSetSpeed [2, 50, 100];sliderSetSpeed [4, 1, 1];sliderSetPosition [2, viewdistance];sliderSetPosition [4, terraindetail];};";
+	onLoad = "[] spawn {if (isnil 'terraindetail') then {terraindetail = 2}; ctrlSetText [1,format['%1/%2 m', viewdistance, e12_settings_maxvd]]; ctrlSetText [3,format['%1/%2', terraindetail, 5]]; sliderSetRange [2, 500, e12_settings_maxvd];sliderSetRange [4, 1, 5];sliderSetSpeed [2, 50, 100];sliderSetSpeed [4, 1, 1];sliderSetPosition [2, viewdistance];sliderSetPosition [4, terraindetail];};";
 
 	class controls {
 
@@ -295,7 +294,7 @@ class e12_RMM_ui_settings {
 		class TDSlider: E12UI_Slider {
 			idc = 4;
 			y = "(((safeZoneY * 0.9)+ ((0) * ((((safeZoneH * 0.9)/ 42) / 0.8)* (42/ 4))))+ ((5.5) * (((safeZoneH * 0.9)/ 42) / 0.8)))";
-			onSliderPosChanged = "_this spawn {private "_terraindetail"; _terraindetail = round(_this select 1); terraindetail = _terraindetail;  ctrlSetText [3,format['%1/%2', terraindetail, 5]]; sleep 3/4; if (terraindetail == _terraindetail) then {setterraingrid ([50, 25, 12.5, 6.25, 3.125] select (terrainDetail - 1));}}; player setvariable ['pterraindetail', terraindetail, true];";
+			onSliderPosChanged = "_this spawn {private '_terraindetail'; _terraindetail = round(_this select 1); terraindetail = _terraindetail;  ctrlSetText [3,format['%1/%2', terraindetail, 5]]; sleep 3/4; if (terraindetail == _terraindetail) then {setterraingrid ([50, 25, 12.5, 6.25, 3.125] select (terrainDetail - 1));}}; player setvariable ['pterraindetail', terraindetail, true];";
 		};
 	};
 };
