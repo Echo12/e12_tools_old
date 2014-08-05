@@ -17,28 +17,39 @@ if (typeName _params == typeName []) then {
 };
 
 _menus = [];
-
-if (_menuName == "e12_menu_self_tele") then {
+if (_menuName == "e12_menu_self_admin") then {
 	_menus set [count _menus,
 		[
-			["e12_menu_self_tele","Teleport Options", _menuRsc],
+			["e12_menu_self_admin","Admin Options", _menuRsc],
 			[
-                ["Teleport zur Base",
-					{[] spawn FUNC(teleport_base)},
+				["Performance Monitor",
+					{[] spawn FUNC(admin_perfmon)},
 					"", "", "", -1,1,
-					(vehicle player == player)],
-                ["Teleport zur vorherigen Position",
-					{[] spawn FUNC(teleport_oldpos)},
+					((__isAdmin) && isClass(configFile >> "CfgPatches" >> "e12_amf_perflog"))],
+				["Teleport Mapclick",
+					{[] spawn FUNC(admin_teleport)},
 					"", "", "", -1,1,
-					(!isNil QGVAR(teleport_oldpos) && !(GVAR(teleport_oldpos) distance [0,0,0] == 0) && (vehicle player == player))],
-                ["Teleport zum Gruppenführer",
-					{[] spawn FUNC(teleport_leader)},
+					((__isAdmin))],
+                ["Selbst zum Medic machen",
+					{player spawn FUNC(admin_medic)},
 					"", "", "", -1,1,
-					((vehicle player == player) && ((leader (group player)) != player))],
-                ["Teleport zum Missionsleiter",
-					{[] spawn FUNC(teleport_missionleader)},
+					(__isAdmin)],
+				["Magische Heilung",
+					{player spawn FUNC(fullHeal)},
 					"", "", "", -1,1,
-					((vehicle player == player))]
+					(__isAdmin)],
+                ["Item Kiste erstellen",
+					{(getPos player) spawn FUNC(admin_createitemcrate)},
+					"", "", "", -1,1,
+					(__isAdmin)],
+                ["Medic Kiste erstellen",
+					{(getPos player) spawn FUNC(admin_createmediccrate)},
+					"", "", "", -1,1,
+					(__isAdmin)],
+                ["ACRE Kiste erstellen",
+					{(getPos player) spawn FUNC(admin_createacrecrate)},
+					"", "", "", -1,1,
+					(__isAdmin)]
                 
 				
 			]
