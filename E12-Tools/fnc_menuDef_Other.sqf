@@ -9,7 +9,7 @@ _menuRsc = "popup";
 
 
 if !(_target isKindOf "MAN") exitWith {}; // I'm sure there's some other better way to do this but hey, this is what you get when stuff isn't documented.
-if !(alive _target) exitWith {}; 
+if !(alive _target) exitWith {};
 
 _menus = [
   [
@@ -18,9 +18,9 @@ _menus = [
       ["<t color='#ffc600'>Tools ></t>",
         {}, // code to run
         "", "", // ?? and ??
-		[QPATHTO_F(fnc_menuDef_Other_main),"e12_menu_other_main",1], //submenu
-		-1, // key
-        (true)] //&& (cba_ui_target != player))] //conditions
+[QPATHTO_F(fnc_menuDef_Other_main),"e12_menu_other_main",1], //submenu
+-1, // key
+		(true && (_target != cursorTarget))] //conditions
     ]
   ]
 ];
