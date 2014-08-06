@@ -33,8 +33,10 @@ class CfgVehicles {
 	};
 
 	class E12_AMF_Required_Logic: E12_AMF_Logic {
+		author = "Echo12 Development Team";
 		displayName = "$STR_E12AMF_MOD_REQUIRE";
 		vehicleClass = "Modules";
+		icon = "\x\e12\addons\amf_main\UI\AMF.paa";
 	};
 };
 
