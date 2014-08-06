@@ -23,10 +23,12 @@ if (_menuName == "e12_menu_other_main") then {
 		[
 			["e12_menu_other_main","Options", _menuRsc],
 			[
+			/*
 				["Gruppe joinen",
 					{[cba_ui_target] call FUNC(interact_JoinGroup)},
 					"", "", "", -1,
-					(true && (group cba_ui_target) != (group player))],//&& (isPlayer cba_ui_target)
+					(true && (group cba_ui_target) != (group player))],
+			*/
                 ["Zum Medic machen",
 					{cba_ui_target call FUNC(admin_medic)},
 					"", "", "", -1,
