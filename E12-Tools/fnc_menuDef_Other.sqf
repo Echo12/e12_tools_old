@@ -20,7 +20,7 @@ _menus = [
         "", "", // ?? and ??
 [QPATHTO_F(fnc_menuDef_Other_main),"e12_menu_other_main",1], //submenu
 -1, // key
-		(true && (_target != cursorTarget))] //conditions
+		(true && (cba_ui_target != player))]  //conditions
     ]
   ]
 ];
