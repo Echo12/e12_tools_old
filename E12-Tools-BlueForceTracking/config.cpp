@@ -17,8 +17,10 @@ class CfgPatches {
 class CfgVehicles {
 
 	class E12_AMF_TRACKING_Logic: E12_AMF_Logic {
+		author = "Echo12 Development Team";
 		displayName = "$STR_E12AMF_MOD_TRACKING_ENABLE";
 		vehicleClass = "Modules";
+		icon = "\x\e12\addons\amf_tracking\UI\BFTracking_ca.paa";
 
 		class Eventhandlers {
 			init = "if (isServer) then {e12_amf_tracking_enabled = true;publicVariable 'e12_amf_tracking_enabled'};";
