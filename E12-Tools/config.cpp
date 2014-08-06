@@ -5,7 +5,10 @@ class CfgPatches {
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 1.000000;
-		requiredAddons[] = {"CBA_MAIN"};
+		requiredAddons[] = {
+		"CBA_MAIN",
+		"AGM_Core"
+		};
 		author[] = {"Coati - Echo12 Development Team"};
 		version = "1.0.0";
 		authorUrl = "http://www.echo12.de";
