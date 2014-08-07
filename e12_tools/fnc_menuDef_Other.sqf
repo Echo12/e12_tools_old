@@ -7,10 +7,22 @@ _params = _this select 1;
 _menuName = "main";
 _menuRsc = "popup";
 
-
-if (_target == player) exitWith {}; 
 if !(_target isKindOf "MAN") exitWith {}; // I'm sure there's some other better way to do this but hey, this is what you get when stuff isn't documented. 
 if !(alive _target) exitWith {}; 
+
+// Fix for CBA Bug/Change: cba_ui_target always player
+
+// Reset target on every execution
+cba_ui_target = nil;
+
+// Check if cursorTarget fits
+_potentialTarget = cursorTarget;
+if (!isNull _potentialTarget) then {
+  if ((player distance _potentialTarget) < 3.5) then {
+    cba_ui_target = _potentialTarget;
+  };
+};
+if (isNil "cba_ui_target") exitWith{[]};
 
 _menus = [
   [
