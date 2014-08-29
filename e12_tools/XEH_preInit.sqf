@@ -3,7 +3,7 @@
 #define __addMag(CRATE,CLASS) CRATE addMagazineCargoGlobal [CLASS, 4];
 #define __addItemKl(CRATE,CLASS) CRATE addItemCargoGlobal [CLASS, 4];
 #define __addItem(CRATE,CLASS) CRATE addItemCargoGlobal [CLASS, 15];
-#define __addItemBandage(CRATE,CLASS) CRATE addItemCargoGlobal [CLASS, 50];
+#define __addItemBandage(CRATE,CLASS) CRATE addItemCargoGlobal [CLASS, 100];
 #define __addMagMany(CRATE,CLASS) CRATE addMagazineCargoGlobal [CLASS, 50];
 
 PREP(setSafeReconnect);
