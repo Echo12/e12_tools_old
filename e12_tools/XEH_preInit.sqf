@@ -195,17 +195,24 @@ FUNC(admin_createitemcrate) = {
 		clearItemCargoGlobal _crate;
         __addItemKl(_crate,"ItemMap")
         __addWep(_crate,"ItemWatch")
-        __addWep(_crate,"Rangefinder")
+        __addWep(_crate,"AGM_Vector")
         __addWep(_crate,"Binocular")
         __addItemKl(_crate,"ItemGPS")
-		__addItem(_crate,"AGM_EarBuds")
-        __addWep(_crate,"ItemCompass")
+		__addItemKl(_crate,"AGM_SpareBarrel")
+		__addItemKl(_crate,"AGM_ItemKestrel")
+		__addItemKl(_crate,"AGM_MapTools")			
+		__addItem(_crate,"AGM_EarBuds")	
+		__addWep(_crate,"ItemCompass")
         __addWep(_crate,"Laserdesignator")
         __addMag(_crate,"Laserbatteries")
+		__addMag(_crate,"150Rnd_762x51_Box_Tracer")
+		__addMag(_crate,"20Rnd_762x51_Mag")
+		__addMagMany(_crate,"30Rnd_556x45_Stanag_Tracer_Red")
 		__addMagMany(_crate,"30Rnd_65x39_caseless_mag_Tracer")
 	},
 	_this] call CBA_fnc_globalExecute;  
 };
+
 
 FUNC(admin_createacrecrate) = {
  	[0, 
