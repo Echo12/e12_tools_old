@@ -45,6 +45,12 @@ if (_menuName == "e12_menu_self_main") then {
 					[QPATHTO_F(fnc_menuDef_Self_sthud),"e12_menu_self_sthud",1],
 					-1,1, // key
 			        (GVAR(settings_perm_sthud) && (!(isNil "ST_FTHud_Init")))],
+                ["<t color='#ffc600'>Missionbuild ></t>",
+			        {}, // code to run
+			        "", "", // ?? and ??
+					[QPATHTO_F(fnc_menuDef_Self_mission),"e12_menu_self_mission",1], 
+					-1,1, // key
+			        (__isAdmin)],
 				/*	
                 ["<t color='#ffc600'>Gruppenmanagement ></t>",
 			        {}, // code to run

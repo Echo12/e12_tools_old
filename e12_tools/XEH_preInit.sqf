@@ -10,6 +10,8 @@ PREP(setSafeReconnect);
 PREP(removeSafeReconnect);
 PREP(applySafeReconnect);
 PREP(hasSafeReconnect);
+PREP(isInvulnerable);
+PREP(toggleInvulnerability);
 PREP(fullHeal);
 
 GVAR(teleport_oldpos) = [0,0,0];
