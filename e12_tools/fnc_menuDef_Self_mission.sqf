@@ -41,6 +41,10 @@ if (_menuName == "e12_menu_self_mission") then {
 				["Open Virtual Arsenal",
 					{["Open",true] spawn BIS_fnc_arsenal},
 					"", "", "", -1,1,
+					((__isAdmin) && (vehicle player == player))],
+				["Get Position (ASL)",
+					{hintsilent format ["Pos: %1",getposasl player]; copyToClipboard format["%1",getposasl player];},
+					"", "", "", -1,1,
 					((__isAdmin) && (vehicle player == player))]
 			]
 		]
