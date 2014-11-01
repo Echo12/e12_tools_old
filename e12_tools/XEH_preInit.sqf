@@ -220,8 +220,22 @@ FUNC(admin_createacrecrate) = {
  	[0, 
 	{
         private["_crate"];
-        _crate = createVehicle ["ACRE_RadioBox", _this, [], 0, "NONE"]; 
+        //_crate = createVehicle ["ACRE_RadioBox", _this, [], 0, "NONE"]; 
+        _crate = createVehicle ["Box_NATO_Support_F", _this, [], 0, "NONE"]; 
 		_crate allowdamage false;
+        clearWeaponCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearItemCargoGlobal _crate;
+		for "_i" from 1 to 15 do {
+			_item_name = format["ACRE_PRC148_ID_%1",_i];
+			_crate addItemCargoGlobal [_item_name, 1];
+		};
+		for "_i" from 1 to 15 do {
+			_item_name = format["ACRE_PRC343_ID_%1",_i];
+			_crate addItemCargoGlobal [_item_name, 1];
+		};
+		//__addItem(_crate,"ACRE_PRC343_ID_1")
+		//__addItem(_crate,"ACRE_PRC148_ID_1")
 	},
 	_this] call CBA_fnc_globalExecute;  
 };
