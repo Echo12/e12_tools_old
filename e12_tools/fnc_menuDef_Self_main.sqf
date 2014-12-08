@@ -51,14 +51,6 @@ if (_menuName == "e12_menu_self_main") then {
 					[QPATHTO_F(fnc_menuDef_Self_mission),"e12_menu_self_mission",1], 
 					-1,1, // key
 			        (__isAdmin)],
-				/*	
-                ["<t color='#ffc600'>Gruppenmanagement ></t>",
-			        {}, // code to run
-			        "", "", // ?? and ??
-					[QPATHTO_F(fnc_menuDef_Self_group),"e12_menu_self_group",1], 
-					-1, // key
-			        (true)],
-				*/
 				["Statistik einschalten",
 					{[] spawn FUNC(statsloop)},
 					"", "", "", -1,1,

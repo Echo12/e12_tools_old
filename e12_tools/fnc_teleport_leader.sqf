@@ -17,7 +17,7 @@ if(!isNil "_unit") then {
 		player moveInCargo _veh;
 		sleep 0.5;
 		if((getpos player distance _oldpos) < 3) then {
-			player groupChat "Teleport fehlgeschlagen, Zielperson in vollbesetztem Fahrzeug, spaeter erneut probieren";
+			player groupChat "Teleport fehlgeschlagen, Zielperson in vollbesetztem Fahrzeug, später erneut probieren";
 		}else{
 			[QGVAR(event_groupmsg),[player, 1]] call CBA_fnc_globalEvent;
 		};	
