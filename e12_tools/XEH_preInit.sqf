@@ -4,6 +4,7 @@
 #define __addItemKl(CRATE,CLASS) CRATE addItemCargoGlobal [CLASS, 4];
 #define __addItem(CRATE,CLASS) CRATE addItemCargoGlobal [CLASS, 15];
 #define __addItemBandage(CRATE,CLASS) CRATE addItemCargoGlobal [CLASS, 100];
+#define __addItemMedic(CRATE,CLASS) CRATE addItemCargoGlobal [CLASS, 50];
 #define __addMagMany(CRATE,CLASS) CRATE addMagazineCargoGlobal [CLASS, 50];
 
 PREP(setSafeReconnect);
@@ -252,9 +253,9 @@ FUNC(admin_createmediccrate) = {
 		clearMagazineCargoGlobal _crate;
 		clearItemCargoGlobal _crate;
         __addItemBandage(_crate,"AGM_Bandage")
-        __addItemBandage(_crate,"AGM_Morphine")
-		__addItemBandage(_crate,"AGM_Epipen")
-		__addItem(_crate,"AGM_Bloodbag")
+        __addItemMedic(_crate,"AGM_Morphine")
+	__addItemMedic(_crate,"AGM_Epipen")
+	__addItem(_crate,"AGM_Bloodbag")
 	},
 	_this] call CBA_fnc_globalExecute;  
 };
