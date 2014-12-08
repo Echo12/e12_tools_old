@@ -17,6 +17,13 @@ PREP(fullHeal);
 
 GVAR(teleport_oldpos) = [0,0,0];
 
+//perf_mon
+GVAR(perfLogServer)=[0, 0, 0, 0];
+GVAR(perfLogHC)=[0, 0, 0, 0];
+
+PREP(perfLogHC);
+PREP(perfLogServer);
+
 //Keybelegung
 ace_sys_interaction_key_self=63; //Taste F5
 ace_sys_interaction_key=64; //Taste F6
@@ -175,13 +182,15 @@ FUNC(admin_teleport) = {
 	onMapSingleClick "vehicle player setPos _pos;onMapSingleClick """";true;";
 };
 FUNC(admin_perfmon) = {
-	if((!isNil "e12_amf_perflog_perfLogHC") && __ISPERFLOGON(e12_amf_perflog_perfLogHC)) then {
-		player globalChat format["HC: Current FPS: %1, Lowest FPS: %2, Local Units: %3, Remote Units: %4", e12_amf_perflog_perfLogHC select 0, e12_amf_perflog_perfLogHC select 1, e12_amf_perflog_perfLogHC select 2, e12_amf_perflog_perfLogHC select 3]; 
+	if((!isNil QGVAR(perfLogHC)) ) then {
+		_perfHC = GVAR(perfLogHC);
+		player globalChat format["HC: Current FPS: %1, Lowest FPS: %2, Local Units: %3, Remote Units: %4", _perfHC select 0, _perfHC select 1, _perfHC select 2, _perfHC select 3]; 
 	}else{
 		player globalChat "HC Performance not available"; 
 	};
-	if(!isNil "e12_amf_perflog_perfLogServer" && __ISPERFLOGON(e12_amf_perflog_perfLogServer)) then {
-		player globalChat format["Server: Current FPS: %1, Lowest FPS: %2, Local Units: %3, Remote Units: %4",e12_amf_perflog_perfLogServer select 0, e12_amf_perflog_perfLogServer select 1, e12_amf_perflog_perfLogServer select 2, e12_amf_perflog_perfLogServer select 3];
+	if(!isNil QGVAR(perfLogServer) ) then {
+		_perfServ = GVAR(perfLogServer);
+		player globalChat format["Server: Current FPS: %1, Lowest FPS: %2, Local Units: %3, Remote Units: %4",_perfServ select 0, _perfServ select 1, _perfServ select 2, _perfServ select 3];
 	}else{
 		player globalChat "Server Performance not available";
 	};
@@ -214,6 +223,16 @@ FUNC(admin_createitemcrate) = {
 		__addMag(_crate,"HandGrenade")
 		__addMagMany(_crate,"30Rnd_556x45_Stanag_Tracer_Red")
 		__addMagMany(_crate,"30Rnd_65x39_caseless_mag_Tracer")
+	},
+	_this] call CBA_fnc_globalExecute;  
+};
+
+FUNC(admin_createagmitemcrate) = {
+ 	[0, 
+	{
+        private["_crate"];
+        _crate = createVehicle ["AGM_Box_Misc", _this, [], 0, "NONE"]; 
+        _crate allowdamage false;
 	},
 	_this] call CBA_fnc_globalExecute;  
 };

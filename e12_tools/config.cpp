@@ -19,6 +19,7 @@ class Extended_PreInit_EventHandlers {
 
 	class e12_tools {
 		clientInit = "call compile preprocessFileLineNumbers 'x\e12\addons\tools\XEH_preInit.sqf'";
+		serverInit = "e12retnull = [] spawn compile preprocessFileLineNumbers 'x\e12\addons\tools\XEH_PreServerInit.sqf'";
 	};
 };
 
@@ -26,6 +27,7 @@ class Extended_PostInit_EventHandlers {
 
 	class e12_tools {
 		clientInit = "e12retnull = [] spawn compile preprocessFileLineNumbers 'x\e12\addons\tools\clientInit.sqf'";
+		serverInit = "e12retnull = [] spawn compile preprocessFileLineNumbers 'x\e12\addons\tools\XEH_PostServerInit.sqf'";
 	};
 };
 
