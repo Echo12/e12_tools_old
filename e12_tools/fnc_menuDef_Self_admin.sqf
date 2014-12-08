@@ -25,7 +25,7 @@ if (_menuName == "e12_menu_self_admin") then {
 				["Performance Monitor",
 					{[] spawn FUNC(admin_perfmon)},
 					"", "", "", -1,1,
-					((__isAdmin) && isClass(configFile >> "CfgPatches" >> "e12_amf_perflog"))],
+					(__isAdmin)],
 				["Teleport Mapclick",
 					{[] spawn FUNC(admin_teleport)},
 					"", "", "", -1,1,

@@ -2,6 +2,12 @@
 #define DIK_F5              0x3F
 #define DIK_F6              0x40
 
+//Execute on HC
+if (!hasInterface && !isServer) then{
+    if(isNil "e12_amf_perflog_disable") then {
+        [] spawn FUNC(perfLogHC);    
+    };
+};
 
 waitUntil {!isNil "CBA_fnc_registerKeybindToFleximenu"};
 
