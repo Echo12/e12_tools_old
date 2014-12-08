@@ -122,7 +122,7 @@ FUNC(showStats)={
 		//old playerposition, meter on foot, meter in vehicle, shots fired
 		GVAR(stats)=[getPos (vehicle player), 0, 0, 0];				
 	};	
-	player globalChat format["Distance On Foot: %1m, By Vehicle: %2m, Shots fired: %3", ceil (GVAR(stats) select 1), ceil(GVAR(stats) select 2), GVAR(stats) select 3];
+	player globalChat format["Distanz zu Fuss: %1m, Per Fahrzeug: %2m, Schüsse abgegeben: %3", ceil (GVAR(stats) select 1), ceil(GVAR(stats) select 2), GVAR(stats) select 3];
 };
 
 FUNC(statsloop) = {
@@ -190,25 +190,27 @@ FUNC(admin_createitemcrate) = {
  	[0, 
 	{
         private["_crate"];
-        _crate = createVehicle ["Box_NATO_Support_F", _this, [], 0, "NONE"]; 
+        _crate = createVehicle ["Box_NATO_Ammo_F", _this, [], 0, "NONE"]; 
 		_crate allowdamage false;
         clearWeaponCargoGlobal _crate;
 		clearMagazineCargoGlobal _crate;
 		clearItemCargoGlobal _crate;
         __addItemKl(_crate,"ItemMap")
         __addWep(_crate,"ItemWatch")
-        __addWep(_crate,"AGM_Vector")
         __addWep(_crate,"Binocular")
         __addItemKl(_crate,"ItemGPS")
-		__addItemKl(_crate,"AGM_SpareBarrel")
-		__addItemKl(_crate,"AGM_ItemKestrel")
-		__addItemKl(_crate,"AGM_MapTools")			
-		__addItem(_crate,"AGM_EarBuds")	
 		__addWep(_crate,"ItemCompass")
         __addWep(_crate,"Laserdesignator")
         __addMag(_crate,"Laserbatteries")
 		__addMag(_crate,"150Rnd_762x51_Box_Tracer")
+		__addMag(_crate,"200Rnd_65x39_cased_Box_Tracer")
+		__addMag(_crate,"100Rnd_65x39_caseless_mag_Tracer")
 		__addMag(_crate,"20Rnd_762x51_Mag")
+		__addMag(_crate,"SmokeShellRed")
+		__addMag(_crate,"SmokeShellGreen")
+		__addMag(_crate,"SmokeShell")
+		__addMag(_crate,"1Rnd_HE_Grenade_shell")
+		__addMag(_crate,"HandGrenade")
 		__addMagMany(_crate,"30Rnd_556x45_Stanag_Tracer_Red")
 		__addMagMany(_crate,"30Rnd_65x39_caseless_mag_Tracer")
 	},
@@ -250,9 +252,19 @@ FUNC(admin_createmediccrate) = {
 		clearMagazineCargoGlobal _crate;
 		clearItemCargoGlobal _crate;
         __addItemBandage(_crate,"AGM_Bandage")
-        __addItem(_crate,"AGM_Morphine")
-		__addItem(_crate,"AGM_Epipen")
+        __addItemBandage(_crate,"AGM_Morphine")
+		__addItemBandage(_crate,"AGM_Epipen")
 		__addItem(_crate,"AGM_Bloodbag")
+	},
+	_this] call CBA_fnc_globalExecute;  
+};
+
+FUNC(admin_createagmcrate) = {
+ 	[0, 
+	{
+        private["_crate"];
+        _crate = createVehicle ["AGM_Box_Misc", _this, [], 0, "NONE"]; 
+		_crate allowdamage false;
 	},
 	_this] call CBA_fnc_globalExecute;  
 };

@@ -49,7 +49,11 @@ if (_menuName == "e12_menu_self_admin") then {
                 ["ACRE Kiste erstellen",
 					{(getPos player) spawn FUNC(admin_createacrecrate)},
 					"", "", "", -1,1,
-					(__isAdmin)]
+					(__isAdmin)],
+				["AGM Kiste erstellen",
+					{(getPos player) spawn FUNC(admin_createagmcrate)},
+					"", "", "", -1,1,
+					(__isAdmin)]	
                 
 				
 			]

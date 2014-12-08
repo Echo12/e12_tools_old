@@ -23,7 +23,7 @@ if(!isNil format["e12_tools_safereconnect_uid_%1",_uid]) then {
 		[_unit] call FUNC(removeSafeReconnect);
 	};
 }else{
-	_unit globalChat "Safe Reconnect not available!";
+	_unit globalChat "Safe Reconnect nicht verfügbar!";
 };
 titleText ["SAFE RECONNECT","BLACK IN",3];
 sleep 3;
