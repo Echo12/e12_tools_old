@@ -227,16 +227,6 @@ FUNC(admin_createitemcrate) = {
 	_this] call CBA_fnc_globalExecute;  
 };
 
-FUNC(admin_createagmitemcrate) = {
- 	[0, 
-	{
-        private["_crate"];
-        _crate = createVehicle ["AGM_Box_Misc", _this, [], 0, "NONE"]; 
-        _crate allowdamage false;
-	},
-	_this] call CBA_fnc_globalExecute;  
-};
-
 
 FUNC(admin_createacrecrate) = {
  	[0, 
