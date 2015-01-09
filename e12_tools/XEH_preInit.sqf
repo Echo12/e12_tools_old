@@ -6,6 +6,7 @@
 #define __addItemBandage(CRATE,CLASS) CRATE addItemCargoGlobal [CLASS, 100];
 #define __addItemMedic(CRATE,CLASS) CRATE addItemCargoGlobal [CLASS, 50];
 #define __addMagMany(CRATE,CLASS) CRATE addMagazineCargoGlobal [CLASS, 50];
+#define __addMagMG(CRATE,CLASS) CRATE addMagazineCargoGlobal [CLASS, 20];
 
 PREP(setSafeReconnect);
 PREP(removeSafeReconnect);
@@ -201,28 +202,28 @@ FUNC(admin_createitemcrate) = {
 	{
         private["_crate"];
         _crate = createVehicle ["Box_NATO_Ammo_F", _this, [], 0, "NONE"]; 
-		_crate allowdamage false;
+	_crate allowdamage false;
         clearWeaponCargoGlobal _crate;
-		clearMagazineCargoGlobal _crate;
-		clearItemCargoGlobal _crate;
+	clearMagazineCargoGlobal _crate;
+	clearItemCargoGlobal _crate;
         __addItemKl(_crate,"ItemMap")
         __addWep(_crate,"ItemWatch")
         __addWep(_crate,"Binocular")
         __addItemKl(_crate,"ItemGPS")
-		__addWep(_crate,"ItemCompass")
+	__addWep(_crate,"ItemCompass")
         __addWep(_crate,"Laserdesignator")
         __addMag(_crate,"Laserbatteries")
-		__addMag(_crate,"150Rnd_762x51_Box_Tracer")
-		__addMag(_crate,"200Rnd_65x39_cased_Box_Tracer")
-		__addMag(_crate,"100Rnd_65x39_caseless_mag_Tracer")
-		__addMag(_crate,"20Rnd_762x51_Mag")
-		__addMag(_crate,"SmokeShellRed")
-		__addMag(_crate,"SmokeShellGreen")
-		__addMag(_crate,"SmokeShell")
-		__addMag(_crate,"1Rnd_HE_Grenade_shell")
-		__addMag(_crate,"HandGrenade")
-		__addMagMany(_crate,"30Rnd_556x45_Stanag_Tracer_Red")
-		__addMagMany(_crate,"30Rnd_65x39_caseless_mag_Tracer")
+	__addMag(_crate,"20Rnd_762x51_Mag")
+	__addMag(_crate,"SmokeShellRed")
+	__addMag(_crate,"SmokeShellGreen")
+	__addMag(_crate,"SmokeShell")
+	__addMag(_crate,"HandGrenade")
+	__addMagMG(_crate,"150Rnd_762x51_Box_Tracer")
+	__addMagMG(_crate,"200Rnd_65x39_cased_Box_Tracer")
+	__addMagMG(_crate,"100Rnd_65x39_caseless_mag_Tracer")
+	__addMagMany(_crate,"1Rnd_HE_Grenade_shell")
+	__addMagMany(_crate,"30Rnd_556x45_Stanag_Tracer_Red")
+	__addMagMany(_crate,"30Rnd_65x39_caseless_mag_Tracer")
 	},
 	_this] call CBA_fnc_globalExecute;  
 };
@@ -234,10 +235,10 @@ FUNC(admin_createacrecrate) = {
         private["_crate"];
         //_crate = createVehicle ["ACRE_RadioBox", _this, [], 0, "NONE"]; 
         _crate = createVehicle ["Box_NATO_Support_F", _this, [], 0, "NONE"]; 
-		_crate allowdamage false;
+	_crate allowdamage false;
         clearWeaponCargoGlobal _crate;
-		clearMagazineCargoGlobal _crate;
-		clearItemCargoGlobal _crate;
+	clearMagazineCargoGlobal _crate;
+	clearItemCargoGlobal _crate;
 		for "_i" from 1 to 15 do {
 			_item_name = format["ACRE_PRC148_ID_%1",_i];
 			_crate addItemCargoGlobal [_item_name, 1];
@@ -246,8 +247,14 @@ FUNC(admin_createacrecrate) = {
 			_item_name = format["ACRE_PRC343_ID_%1",_i];
 			_crate addItemCargoGlobal [_item_name, 1];
 		};
-		//__addItem(_crate,"ACRE_PRC343_ID_1")
-		//__addItem(_crate,"ACRE_PRC148_ID_1")
+		for "_i" from 1 to 15 do {
+			_item_name = format["ACRE_PRC117F_ID_%1",_i];
+			_crate addItemCargoGlobal [_item_name, 1];
+		};
+		for "_i" from 1 to 15 do {
+			_item_name = format["ACRE_PRC152_ID_%1",_i];
+			_crate addItemCargoGlobal [_item_name, 1];
+		};
 	},
 	_this] call CBA_fnc_globalExecute;  
 };
@@ -257,10 +264,10 @@ FUNC(admin_createmediccrate) = {
 	{
         private["_crate"];
         _crate = createVehicle ["Box_NATO_Support_F", _this, [], 0, "NONE"]; 
-		_crate allowdamage false;
+	_crate allowdamage false;
         clearWeaponCargoGlobal _crate;
-		clearMagazineCargoGlobal _crate;
-		clearItemCargoGlobal _crate;
+	clearMagazineCargoGlobal _crate;
+	clearItemCargoGlobal _crate;
         __addItemBandage(_crate,"AGM_Bandage")
         __addItemMedic(_crate,"AGM_Morphine")
 	__addItemMedic(_crate,"AGM_Epipen")
