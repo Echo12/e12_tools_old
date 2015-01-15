@@ -255,6 +255,10 @@ FUNC(admin_createacrecrate) = {
 			_item_name = format["ACRE_PRC152_ID_%1",_i];
 			_crate addItemCargoGlobal [_item_name, 1];
 		};
+		for "_i" from 1 to 15 do {
+			_item_name = format["ACRE_PRC77_ID_%1",_i];
+			_crate addItemCargoGlobal [_item_name, 1];
+		};
 	},
 	_this] call CBA_fnc_globalExecute;  
 };
