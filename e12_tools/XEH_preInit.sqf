@@ -351,9 +351,18 @@ FUNC(interact_TakeGroupLead) =
 	player] call CBA_fnc_globalExecute;
 };
 
+/* view settings */
+
 FUNC(settings_create) = {
-   createDialog "e12_RMM_ui_settings"; 
+	if (isClass (configFile >> "CfgPatches" >> "viewDistance_TAW")) then {
+		[] call TAWVD_fnc_openMenu;
+	}
+	else {
+   		createDialog "e12_RMM_ui_settings"; 
+  	}
 };
+
+/* sthud */
 
 FUNC(sthud_compass_toggle) = {
 	ST_FTHud_ShowCompass=!ST_FTHud_ShowCompass;
