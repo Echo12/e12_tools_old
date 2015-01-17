@@ -235,30 +235,16 @@ FUNC(admin_createacrecrate) = {
         private["_crate"];
         //_crate = createVehicle ["ACRE_RadioBox", _this, [], 0, "NONE"]; 
         _crate = createVehicle ["Box_NATO_Support_F", _this, [], 0, "NONE"]; 
-	_crate allowdamage false;
-        clearWeaponCargoGlobal _crate;
-	clearMagazineCargoGlobal _crate;
-	clearItemCargoGlobal _crate;
-		for "_i" from 1 to 15 do {
-			_item_name = format["ACRE_PRC148_ID_%1",_i];
-			_crate addItemCargoGlobal [_item_name, 1];
-		};
-		for "_i" from 1 to 15 do {
-			_item_name = format["ACRE_PRC343_ID_%1",_i];
-			_crate addItemCargoGlobal [_item_name, 1];
-		};
-		for "_i" from 1 to 15 do {
-			_item_name = format["ACRE_PRC117F_ID_%1",_i];
-			_crate addItemCargoGlobal [_item_name, 1];
-		};
-		for "_i" from 1 to 15 do {
-			_item_name = format["ACRE_PRC152_ID_%1",_i];
-			_crate addItemCargoGlobal [_item_name, 1];
-		};
-		for "_i" from 1 to 15 do {
-			_item_name = format["ACRE_PRC77_ID_%1",_i];
-			_crate addItemCargoGlobal [_item_name, 1];
-		};
+		_crate allowdamage false;
+    	clearItemCargoGlobal _crate;
+		clearWeaponCargoGlobal _crate;
+		clearMagazineCargoGlobal _crate;
+		clearBackpackCargoGlobal _crate;
+		_crate addItemCargoGlobal ["ACRE_PRC343", 20];
+		_crate addItemCargoGlobal ["ACRE_PRC148", 20];
+		_crate addItemCargoGlobal ["ACRE_PRC152", 20];
+		_crate addItemCargoGlobal ["ACRE_PRC117F", 20];
+		_crate addItemCargoGlobal ["ACRE_PRC77", 20];
 	},
 	_this] call CBA_fnc_globalExecute;  
 };
