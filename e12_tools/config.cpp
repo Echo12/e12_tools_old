@@ -7,10 +7,10 @@ class CfgPatches {
 		requiredVersion = 1.000000;
 		requiredAddons[] = {
 		"CBA_MAIN",
-		"AGM_Core"
+		"ace_main"
 		};
 		author[] = {"Coati - Echo12 Development Team"};
-		version = "1.0.0";
+		version = "1.2.0";
 		authorUrl = "http://www.echo12.de";
 	};
 };

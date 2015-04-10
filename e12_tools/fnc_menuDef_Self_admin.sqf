@@ -41,7 +41,7 @@ if (_menuName == "e12_menu_self_admin") then {
                 ["Item Kiste erstellen",
 					{(getPos player) spawn FUNC(admin_createitemcrate)},
 					"", "", "", -1,1,
-					(__isAdmin)],
+					(__isAdmin)],                                               
                 ["Medic Kiste erstellen",
 					{(getPos player) spawn FUNC(admin_createmediccrate)},
 					"", "", "", -1,1,
@@ -50,8 +50,8 @@ if (_menuName == "e12_menu_self_admin") then {
 					{(getPos player) spawn FUNC(admin_createacrecrate)},
 					"", "", "", -1,1,
 					(__isAdmin)],
-				["AGM Kiste erstellen",
-					{(getPos player) spawn FUNC(admin_createagmcrate)},
+				["ACE Kiste erstellen",
+					{(getPos player) spawn FUNC(admin_createacecrate)},
 					"", "", "", -1,1,
 					(__isAdmin)]	
                 
