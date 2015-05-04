@@ -7,7 +7,8 @@ class CfgPatches {
 		requiredVersion = 1.000000;
 		requiredAddons[] = {
 		"CBA_MAIN",
-		"ace_main"
+		"ace_main",
+		"acre_main"
 		};
 		author[] = {"Coati - Echo12 Development Team"};
 		version = "1.2.0";
