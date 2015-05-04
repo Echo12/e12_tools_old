@@ -23,11 +23,11 @@ if (_menuName == "e12_menu_self_mission") then {
 			["e12_menu_self_mission","Mission Builder Options", _menuRsc],
 			[
 				["Set captive",
-					{[player, true] call ACE_captives_fnc_setHandcuffed },
+					{player setCaptive true },
 					"", "", "", -1,1,
 					(__isAdmin)],
                 ["Set non-captive",
-					{[player, false] call ACE_captives_fnc_setHandcuffed },
+					{player setCaptive false },
 					"", "", "", -1,1,
 					(__isAdmin)],
 				["Make invulnerable",

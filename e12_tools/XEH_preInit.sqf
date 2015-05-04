@@ -274,10 +274,11 @@ FUNC(admin_createacecrate) = {
 FUNC(admin_medic) = {
  	if(player == _this) then {
     	[QGVAR(event_groupmsg),[player, 3]] call CBA_fnc_globalEvent;
-  		player setvariable [QGVAR(medicClass), 1, true];
+
+  		//player setvariable [QGVAR(medicClass), 1, true];
     }else{
         [QGVAR(event_groupmsg),[player, 4, _this]] call CBA_fnc_globalEvent;
-  		_this setvariable [QGVAR(medicClass), 1, true];
+  		//_this setvariable [QGVAR(medicClass), 1, true];
         _this call FUNC(admin_medic_other);
     };    
 };
