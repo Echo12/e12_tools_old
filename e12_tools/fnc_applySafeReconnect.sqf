@@ -16,7 +16,7 @@ if(!isNil format["e12_tools_safereconnect_uid_%1",_uid]) then {
 		_gear = _restore select 1;
 		_pos = _restore select 2;
 	
-		_ret=[_unit,_gear] call AGM_Respawn_fnc_restoreGear;
+		_ret=[_unit,_gear] call ACE_respawn_fnc_restoreGear;
 		
 		_unit setPosASL _pos;
 		_unit setVariable [QGVAR(safereconnectset),true];

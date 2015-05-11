@@ -33,7 +33,7 @@ if (_menuName == "e12_menu_self_admin") then {
                 ["Selbst zum Medic machen",
 					{player spawn FUNC(admin_medic)},
 					"", "", "", -1,1,
-					(__isAdmin)],
+					(__isAdmin)], 
 				["Magische Heilung",
 					{player spawn FUNC(fullHeal)},
 					"", "", "", -1,1,

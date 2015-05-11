@@ -32,7 +32,7 @@ if (_menuName == "e12_menu_other_main") then {
                 ["Zum Medic machen",
 					{cba_ui_target call FUNC(admin_medic)},
 					"", "", "", -1,
-					(__isAdmin)],//&& (isPlayer cba_ui_target)
+					(__isAdmin )],
 				["Magische Heilung",
 					{cba_ui_target call FUNC(fullHeal)},
 					"", "", "", -1,

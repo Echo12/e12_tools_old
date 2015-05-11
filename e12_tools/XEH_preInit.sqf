@@ -276,6 +276,7 @@ FUNC(admin_medic) = {
     	[QGVAR(event_groupmsg),[player, 3]] call CBA_fnc_globalEvent;
 
   		//player setvariable [QGVAR(medicClass), 1, true];
+  		player setVariable ["ace_medical_medicClass", 1];
     }else{
         [QGVAR(event_groupmsg),[player, 4, _this]] call CBA_fnc_globalEvent;
   		//_this setvariable [QGVAR(medicClass), 1, true];
@@ -287,7 +288,8 @@ FUNC(admin_medic_other) ={
 	[-1, 
 	{
 		if(local _this && player == _this) then {
-        	player setvariable [QGVAR(medicClass), 1, true];  
+        	//player setvariable [QGVAR(medicClass), 1, true];  
+        	player setVariable ["ace_medical_medicClass", 1];
         };
 	},
 	_this] call CBA_fnc_globalExecute;    
