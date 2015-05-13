@@ -250,27 +250,22 @@ FUNC(admin_createacrecrate) = {
 };
 
 FUNC(admin_createmediccrate) = {
+
  	[0, 
 	{
         private["_crate"];
-        _crate = createVehicle ["Box_NATO_Support_F", _this, [], 0, "NONE"]; 
-	_crate allowdamage false;
-        clearWeaponCargoGlobal _crate;
-	clearMagazineCargoGlobal _crate;
-	clearItemCargoGlobal _crate;
-        __addItemBandage(_crate,"AGM_Bandage")
-        __addItemMedic(_crate,"AGM_Morphine")
-	__addItemMedic(_crate,"AGM_Epipen")
-	__addItem(_crate,"AGM_Bloodbag")
+        _crate = createVehicle ["ACE_medicalSupplyCrate", _this, [], 0, "NONE"]; 
+		_crate allowdamage false;
 	},
 	_this] call CBA_fnc_globalExecute;  
+
 };
 
-FUNC(admin_createagmcrate) = {
+FUNC(admin_createacecrate) = {
  	[0, 
 	{
         private["_crate"];
-        _crate = createVehicle ["AGM_Box_Misc", _this, [], 0, "NONE"]; 
+        _crate = createVehicle ["ACE_Box_Misc", _this, [], 0, "NONE"]; 
 		_crate allowdamage false;
 	},
 	_this] call CBA_fnc_globalExecute;  
@@ -279,10 +274,12 @@ FUNC(admin_createagmcrate) = {
 FUNC(admin_medic) = {
  	if(player == _this) then {
     	[QGVAR(event_groupmsg),[player, 3]] call CBA_fnc_globalEvent;
-  		player setVariable ["AGM_Medical_fnc_isMedic",true];
+
+  		//player setvariable [QGVAR(medicClass), 1, true];
+  		player setVariable ["ace_medical_medicClass", 1];
     }else{
         [QGVAR(event_groupmsg),[player, 4, _this]] call CBA_fnc_globalEvent;
-  		_this setVariable ["AGM_Medical_fnc_isMedic",true];
+  		//_this setvariable [QGVAR(medicClass), 1, true];
         _this call FUNC(admin_medic_other);
     };    
 };
@@ -291,7 +288,8 @@ FUNC(admin_medic_other) ={
 	[-1, 
 	{
 		if(local _this && player == _this) then {
-        	player setVariable ["AGM_Medical_fnc_isMedic",true];    
+        	//player setvariable [QGVAR(medicClass), 1, true];  
+        	player setVariable ["ace_medical_medicClass", 1];
         };
 	},
 	_this] call CBA_fnc_globalExecute;    

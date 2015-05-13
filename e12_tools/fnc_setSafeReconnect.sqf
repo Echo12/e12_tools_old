@@ -13,7 +13,7 @@ _weaponOnBack = [_unit] call ACE_fnc_WeaponOnBackName;
 _ruckMags = [_unit] call ACE_fnc_RuckMagazinesList;
 _ruckWeps = [_unit] call ACE_fnc_RuckWeaponsList;
 */
-_gear=[_unit] call AGM_Respawn_fnc_getAllGear;
+_gear=[_unit] call ACE_common_fnc_getAllGear;
 _unit setVariable [QGVAR(safereconnectset),true];
 _pos = getPosASL _unit;
 
