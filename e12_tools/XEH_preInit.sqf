@@ -1,12 +1,5 @@
 #include "script_component.hpp"
-#define __addWep(CRATE,CLASS) CRATE addWeaponCargoGlobal [CLASS, 4];
-#define __addMag(CRATE,CLASS) CRATE addMagazineCargoGlobal [CLASS, 4];
-#define __addItemKl(CRATE,CLASS) CRATE addItemCargoGlobal [CLASS, 4];
-#define __addItem(CRATE,CLASS) CRATE addItemCargoGlobal [CLASS, 15];
-#define __addItemBandage(CRATE,CLASS) CRATE addItemCargoGlobal [CLASS, 100];
-#define __addItemMedic(CRATE,CLASS) CRATE addItemCargoGlobal [CLASS, 50];
-#define __addMagMany(CRATE,CLASS) CRATE addMagazineCargoGlobal [CLASS, 50];
-#define __addMagMG(CRATE,CLASS) CRATE addMagazineCargoGlobal [CLASS, 20];
+
 
 PREP(setSafeReconnect);
 PREP(removeSafeReconnect);
@@ -201,29 +194,37 @@ FUNC(admin_createitemcrate) = {
  	[0, 
 	{
         private["_crate"];
-        _crate = createVehicle ["Box_NATO_Ammo_F", _this, [], 0, "NONE"]; 
+    _crate = createVehicle ["Box_NATO_WpsSpecial_F", _this, [], 0, "NONE"]; 
 	_crate allowdamage false;
-        clearWeaponCargoGlobal _crate;
+    clearWeaponCargoGlobal _crate;
 	clearMagazineCargoGlobal _crate;
 	clearItemCargoGlobal _crate;
-        __addItemKl(_crate,"ItemMap")
-        __addWep(_crate,"ItemWatch")
-        __addWep(_crate,"Binocular")
-        __addItemKl(_crate,"ItemGPS")
-	__addWep(_crate,"ItemCompass")
-        __addWep(_crate,"Laserdesignator")
-        __addMag(_crate,"Laserbatteries")
-	__addMag(_crate,"20Rnd_762x51_Mag")
-	__addMag(_crate,"SmokeShellRed")
-	__addMag(_crate,"SmokeShellGreen")
-	__addMag(_crate,"SmokeShell")
-	__addMag(_crate,"HandGrenade")
-	__addMagMG(_crate,"150Rnd_762x51_Box_Tracer")
-	__addMagMG(_crate,"200Rnd_65x39_cased_Box_Tracer")
-	__addMagMG(_crate,"100Rnd_65x39_caseless_mag_Tracer")
-	__addMagMany(_crate,"1Rnd_HE_Grenade_shell")
-	__addMagMany(_crate,"30Rnd_556x45_Stanag_Tracer_Red")
-	__addMagMany(_crate,"30Rnd_65x39_caseless_mag_Tracer")
+	_crate addItemCargoGlobal ["ItemMap", 5];
+	_crate addItemCargoGlobal ["ItemWatch", 5];
+	_crate addItemCargoGlobal ["ItemGPS", 5];
+	_crate addWeaponCargoGlobal ["Binocular", 5];
+	_crate addWeaponCargoGlobal ["ItemCompass", 5];
+	_crate addWeaponCargoGlobal ["Laserdesignator", 5];
+    _crate addMagazineCargoGlobal ["Laserbatteries", 5];
+    _crate addMagazineCargoGlobal ["ACE_20Rnd_762x51_Mag_Tracer", 10];
+	_crate addMagazineCargoGlobal ["10Rnd_338_Mag", 10];
+	_crate addMagazineCargoGlobal ["10Rnd_93x64_DMR_05_Mag", 10];
+	_crate addMagazineCargoGlobal ["10Rnd_127x54_Mag", 10];
+	_crate addMagazineCargoGlobal ["7Rnd_408_Mag", 10];
+	_crate addMagazineCargoGlobal ["5Rnd_127x108_Mag", 10];
+	_crate addMagazineCargoGlobal ["SmokeShellRed", 10];
+	_crate addMagazineCargoGlobal ["SmokeShellGreen", 10];
+	_crate addMagazineCargoGlobal ["SmokeShell", 10];
+	_crate addMagazineCargoGlobal ["HandGrenade", 10];
+	_crate addMagazineCargoGlobal ["150Rnd_762x51_Box_Tracer", 10];
+	_crate addMagazineCargoGlobal ["130Rnd_338_Mag", 10];
+	_crate addMagazineCargoGlobal ["150Rnd_93x64_Mag", 10];
+	_crate addMagazineCargoGlobal ["200Rnd_65x39_cased_Box_Tracer", 10];
+	_crate addMagazineCargoGlobal ["100Rnd_65x39_caseless_mag_Tracer", 10];
+	_crate addMagazineCargoGlobal ["1Rnd_HE_Grenade_shell", 50];
+	_crate addMagazineCargoGlobal ["30Rnd_556x45_Stanag_Tracer_Red", 50];
+	_crate addMagazineCargoGlobal ["30Rnd_65x39_caseless_mag_Tracer", 50];
+	_crate addMagazineCargoGlobal ["30Rnd_65x39_caseless_green_mag_Tracer", 50];
 	},
 	_this] call CBA_fnc_globalExecute;  
 };
